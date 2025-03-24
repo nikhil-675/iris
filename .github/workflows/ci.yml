@@ -1,4 +1,4 @@
-name: Flask CI/CD with Docker
+name: Flask CI Pipeline
 
 on:
   push:
@@ -6,12 +6,8 @@ on:
   pull_request:
     branches: [ "main" ]
 
-env:
-  DEBUG: ${{ secrets.DEBUG }}
-  MODEL_PATH: ${{ secrets.MODEL_PATH }}
-
 jobs:
-  build:
+  flask-ci:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,20 +25,3 @@ jobs:
         pip install -r requirements.txt
 
     
-
-  docker-build:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Build Docker image
-      run: |
-        docker build -t flask-ml-app .
-
-    - name: Test Docker image
-      run: |
-        docker run -d -p 5000:5000 --name flask-ml-container flask-ml-app
-        sleep 5
-        curl --fail http://localhost:5000/api/health || exit 1
