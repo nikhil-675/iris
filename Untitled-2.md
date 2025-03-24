@@ -1,0 +1,37 @@
+```
+└── 📁iris
+    └── 📁.github
+        └── 📁workflows
+            └── ci.yml
+    └── 📁docs
+        └── README.md
+    └── 📁src
+        └── __init__.py
+        └── 📁assets
+        └── 📁EDA
+        └── 📁experiments
+            └── __init__.py
+            └── create_pipeline.py
+        └── 📁main
+            └── __init__.py
+            └── app.py
+        └── 📁models
+        └── 📁pipelines
+        └── 📁routes
+            └── __init__.py
+            └── EDA_bp
+            └── main_bp.py
+        └── 📁shell-scripts
+            └── pre_deploy_check.sh
+            └── run_pipeline.sh
+        └── 📁static
+        └── 📁templates
+        └── 📁utils
+            └── __init__.py
+            └── config.py
+            └── iris_pipeline.pkl
+    └── .env
+    └── .gitignore
+    └── Dockerfile
+    └── requirements.txt
+```
