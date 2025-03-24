@@ -1,0 +1,7 @@
+Flask
+orjson
+joblib
+scikit-learn
+pandas
+python-dotenv
+numpy
